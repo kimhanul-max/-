@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>집합연산기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <!--    파이스크립트를 실행하기 위해 head 부분에 css와 js 파일을 로드-->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <input type="text" placeholder="a 집합" id="a">
+        <input type="text" placeholder="b 집합" id="b">
+        <h1 id="output"></h1>
+        <a href="합집합.html">합집합</a>
+        <a href="교집합.html">교집합</a>
+        <a href="차집합.html" id="color">차집합</a>
+        <button id="btn" pys-onClick="init">실행</button>
+        <py-script>
+            Element_a = Element("a")
+            Element_b = Element("b")
+            output = Element("output")
+            def init(*args):
+                a = set(Element_a.value.split())
+                b = set(Element_b.value.split())
+                if sorted(a - b) == [ ]:
+                    output.element.innerText = "[∅]"
+                else:
+                    output.element.innerText = sorted(a - b)
+            </py-script>
+
+    </body>
+    </html>
