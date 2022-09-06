@@ -35,5 +35,6 @@ button{
     display: block;
 }
 #color{
+    color: black;
     background-color: #C3FF99;
 }
